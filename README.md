@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fclip - 简易在线剪切板
 
-## Getting Started
+Fclip 是一个简单的在线剪切板应用，允许用户保存文本内容，生成 4 位随机访问码，并通过该访问码在其他设备上查看内容。
 
-First, run the development server:
+## 功能特点
+
+- 创建文本剪切板并自动生成 4 位随机访问码
+- 通过访问码查看剪切板内容
+- 浏览所有现有的剪切板
+- 自动 30 天过期机制
+- 响应式设计，适应各种设备
+
+## 技术栈
+
+- Next.js 15
+- TypeScript
+- Tailwind CSS
+- Prisma ORM
+- SQLite 数据库 (开发环境)
+
+## 本地开发
+
+1. 克隆仓库
+
+```bash
+git clone https://github.com/your-username/fclip.git
+cd fclip
+```
+
+2. 安装依赖
+
+```bash
+npm install
+```
+
+3. 设置数据库
+
+```bash
+npx prisma generate
+npx prisma migrate dev --name init
+```
+
+4. 启动开发服务器
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. 在浏览器中访问 http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 部署到 Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. 将项目推送到 GitHub 仓库
 
-## Learn More
+2. 在 Vercel 上创建新项目，并连接到 GitHub 仓库
 
-To learn more about Next.js, take a look at the following resources:
+3. 部署完成后，您的应用将可以在 Vercel 分配的域名上访问
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 生产环境配置
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+对于生产环境，您可能需要使用更稳定的数据库服务，例如：
 
-## Deploy on Vercel
+1. 修改`prisma/schema.prisma`以使用 PostgreSQL 等数据库
+2. 在 Vercel 项目设置中添加数据库连接 URL 作为环境变量
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 许可证
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

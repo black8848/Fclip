@@ -1,5 +1,4 @@
 import { prisma } from '@/lib/db';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ClipActions from '@/components/ClipActions';
 
